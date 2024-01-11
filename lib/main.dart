@@ -26,14 +26,18 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: ElevatedButton(
             onPressed: () => _printPdf(context),
-            child: const Text('Imprimir 72'),
+            child: const Text('Imprimir 70'),
           ),
         ),
       ),
     );
   }
 
-  _printPdf(BuildContext context) => Printing.layoutPdf(onLayout: (PdfPageFormat format) async => _generatePdf(format: const PdfPageFormat(72 * (72.0 / 25.4), double.infinity)));
+  _printPdf(BuildContext context) => Printing.layoutPdf(
+        onLayout: (PdfPageFormat format) async => _generatePdf(
+          format: const PdfPageFormat(70 * (72.0 / 25.4), double.infinity),
+        ),
+      );
 
   Future<Uint8List> _generatePdf({required PdfPageFormat format}) async {
     final pdf = pw.Document(version: PdfVersion.pdf_1_5, compress: true);
