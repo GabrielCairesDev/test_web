@@ -26,14 +26,14 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: ElevatedButton(
             onPressed: () => _printPdf(context),
-            child: const Text('Imprimir'),
+            child: const Text('Imprimir 72'),
           ),
         ),
       ),
     );
   }
 
-  _printPdf(BuildContext context) => Printing.layoutPdf(onLayout: (PdfPageFormat format) async => _generatePdf(format: PdfPageFormat.roll80));
+  _printPdf(BuildContext context) => Printing.layoutPdf(onLayout: (PdfPageFormat format) async => _generatePdf(format: const PdfPageFormat(72 * (72.0 / 25.4), double.infinity)));
 
   Future<Uint8List> _generatePdf({required PdfPageFormat format}) async {
     final pdf = pw.Document(version: PdfVersion.pdf_1_5, compress: true);
@@ -58,14 +58,14 @@ class _MyAppState extends State<MyApp> {
               mainAxisAlignment: pw.MainAxisAlignment.start,
               children: [
                 pw.Text('Chegou mercado | Pediddo #12345 | $datetimeString', style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize)),
-                pw.Text('-------------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
+                pw.Text('-------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Text('Cliente', style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize + 4)),
                 pw.Text('Nome: gabriel araujo', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Text('Contato: 86 88888-8888', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Text('Endereço: ashd as dhaksj ask ak halkd hals als als dhakshkd', style: pw.TextStyle(font: fontRegular, fontSize: fontSize), softWrap: true),
                 pw.Text('Complemento: aasjkdhkasjlh akjsd haskj haskjdh ask dhaskd haslk haskd haskljhjdaskhdlkad', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Text('Observação: jhaskjd hksa dkjas hdkjas hkjash dkjash dkjah dksahd ', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
-                pw.Text('-------------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
+                pw.Text('-------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Text('Pedido', style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize + 4)),
                 pw.Text('', style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize)),
                 pw.Container(
@@ -114,7 +114,7 @@ class _MyAppState extends State<MyApp> {
                                   ],
                                 ),
                               ),
-                              pw.Text('-------------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
+                              pw.Text('-------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                             ],
                           ),
                         ),
@@ -151,7 +151,7 @@ class _MyAppState extends State<MyApp> {
                     pw.Text('Valor troco\n${moneyFormat.format(troco)}', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                   ],
                 ),
-                pw.Text('-------------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
+                pw.Text('-------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Row(
                   mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                   children: [
