@@ -61,15 +61,16 @@ class _MyAppState extends State<MyApp> {
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               mainAxisAlignment: pw.MainAxisAlignment.start,
               children: [
-                pw.Text('Chegou mercado | Pediddo #12345 | $datetimeString', style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize)),
-                pw.Text('-------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
+                pw.Text('Chegou mercado | Pediddo #12345', style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize)),
+                pw.Text(datetimeString, style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize)),
+                pw.Text('------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Text('Cliente', style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize + 4)),
                 pw.Text('Nome: gabriel araujo', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Text('Contato: 86 88888-8888', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Text('Endereço: ashd as dhaksj ask ak halkd hals als als dhakshkd', style: pw.TextStyle(font: fontRegular, fontSize: fontSize), softWrap: true),
                 pw.Text('Complemento: aasjkdhkasjlh akjsd haskj haskjdh ask dhaskd haslk haskd haskljhjdaskhdlkad', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Text('Observação: jhaskjd hksa dkjas hdkjas hkjash dkjash dkjah dksahd ', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
-                pw.Text('-------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
+                pw.Text('------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Text('Pedido', style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize + 4)),
                 pw.Text('', style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize)),
                 pw.Container(
@@ -118,7 +119,7 @@ class _MyAppState extends State<MyApp> {
                                   ],
                                 ),
                               ),
-                              pw.Text('-------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
+                              pw.Text('------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                             ],
                           ),
                         ),
@@ -155,14 +156,15 @@ class _MyAppState extends State<MyApp> {
                     pw.Text('Valor troco\n${moneyFormat.format(troco)}', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                   ],
                 ),
-                pw.Text('-------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
+                pw.Text('------------------------------------------------------', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                 pw.Row(
                   mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                   children: [
                     pw.Text('Valor Total:', style: pw.TextStyle(font: fontRegular, fontSize: fontSize)),
                     pw.Text(moneyFormat.format(200.0), style: pw.TextStyle(font: fontSemiBold, fontSize: fontSize + 4)),
                   ],
-                )
+                ),
+                pw.SizedBox(height: 8),
               ],
             ),
           );
